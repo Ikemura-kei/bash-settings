@@ -139,7 +139,7 @@ fi
 #===== vim =====#
 #===============#
 printf "\n${GREEN}=>installing vim 8.2"
-sudo add-apt-repository ppa:jonathonf.vim && sudo apt update && sudo apt install vim
+sudo add-apt-repository ppa:jonathonf/vim && sudo apt update && sudo apt install vim
 if [ -e $HOME/.vim ]; then
   mkdir $HOME/.vim
   cp -r $HOME/vim-settings/* $HOME/.vim 
