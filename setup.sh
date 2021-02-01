@@ -84,7 +84,7 @@ fi
 printf "\n${GREEN}=>checking powerline installation${NC}\n"
 if ! command -v powerline-daemon &> /dev/null
 then
-  echo "powerline could not be found, do you want to install it with (pip install git+git://github.com/Lokaltog/powerline)?"
+  echo "powerline could not be found, do you want to install it with (pip install git+git://github.com/Lokaltog/powerline)? [y/n]: "
   read RESPONSE
   if [[ "$RESPONSE" == "y" ]] || [[ "$RESPONSE" == "Y" ]]
   then 
