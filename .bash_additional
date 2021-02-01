@@ -1,0 +1,57 @@
+if command -v kitty &> /dev/null
+then
+  source <(kitty + complete setup bash)
+fi
+
+#================================#
+#===== extra useful configs =====#
+#================================#
+if [ -e ./.bash_keyboard ]; then
+  source ./.bash_keyboard
+fi
+
+if [ -e ./.bash_aliases ]; then
+  source ./.bash_aliases
+fi
+
+#===============#
+#===== ROS =====#
+#===============#
+if [ -e /opt/ros/melodic/setup.bash ]; then
+  source /opt/ros/melodic/setup.bash
+fi
+export ROS_DOMAIN_ID=9
+
+#===========================#
+#===== RM2021 project =====#
+#===========================#
+if [ -e $HOME/HKUST-Enterprize-Autonomous-Robot-Framework/devel/setup.bash ]; then
+  source $HOME/HKUST-Enterprize-Autonomous-Robot-Framework/devel/setup.bash 
+fi
+
+if [ -e $HOME/gcc-arm-none-eabi-8-2019-q3-update/bin ]; then
+  PATH=$HOME/gcc-arm-none-eabi-8-2019-q3-update/bin:$PATH
+fi
+
+if [ -e $HOME/clang+llvm-10.0.0-x86_64-linux-gnu-ubuntu-18.04/bin ]; then
+  PATH=$HOME/clang+llvm-10.0.0-x86_64-linux-gnu-ubuntu-18.04/bin:$PATH
+fi
+
+#==============================#
+#===== powerline settings =====#
+#==============================#
+if command -v powerline-daemon &> /dev/null
+then
+  export TERM="screen-256color"
+  powerline-daemon -q
+  POWERLINE_BASH_CONTINUATION=1
+  POWERLINE_BASH_SELECT=1
+fi
+
+if [ -e $HOME/anaconda3/lib/python3.8/site-packages/powerline/bindings/bash/powerline.sh ]; then
+  $HOME/anaconda3/lib/python3.8/site-packages/powerline/bindings/bash/powerline.sh
+fi
+
+if [ -e $HOME/.local/lib/python3.8/site-packages/powerline/bindings/bash/powerline.sh ]; then
+  $HOME/.local/lib/python3.8/site-packages/powerline/bindings/bash/powerline.sh
+fi
