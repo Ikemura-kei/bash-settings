@@ -1,7 +1,6 @@
 #!/bin/bash
 
 sudo apt install build-essential
-
 sudo apt install clang-format
 
 GREEN='\033[0;32m'
@@ -184,3 +183,7 @@ git clone git@github.com:Ikemura-kei/HKUST-Enterprize-Autonomous-Robot-Framework
 echo ""
 
 echo "Done basic setup, please download the Spinnaker SDK and then you will be set!"
+
+echo "if [ -e $HOME/bash-settings ]; then" >> $HOME/.bashrc
+printf "\tsource $HOME/bash-settings/.bash_additional\n" >> $HOME/.bashrc
+echo "fi" >> $HOME/.bashrc
